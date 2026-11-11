@@ -1,0 +1,99 @@
+Specification CommonMark
+
+DataType Markdown
+Description Markdown source text.
+Examples: ValidValues
+| Value           | IsValid | Notes |
+| """Hello"""     | True    |       |
+| """# Heading""" | True    |       |
+
+DataType Html
+Description HTML produced from Markdown.
+Examples: ValidValues
+| Value                  | IsValid | Notes |
+| """<p>Hello</p>"""     | True    |       |
+| """<h1>Heading</h1>""" | True    |       |
+
+Attributes MarkdownRendering
+| Name     | DataType |
+| Markdown | Markdown |
+| Html     | Html     |
+| Notes    | String   |
+
+ScenarioGroup Paragraphs
+
+Scenario Render Plain Paragraph
+Description Plain text is rendered as a paragraph.
+Examples: MarkdownRendering
+| Markdown          | Html                     | Notes                  |
+| """Hello world""" | """<p>Hello world</p>""" | Single-line paragraph. |
+| """CommonMark"""  | """<p>CommonMark</p>"""  | Simple text.           |
+
+ScenarioGroup Headings
+
+Scenario Render ATX Headings
+Description Hash characters create headings.
+Examples: MarkdownRendering
+| Markdown          | Html                   | Notes            |
+| """# Heading"""   | """<h1>Heading</h1>""" | Level 1 heading. |
+| """## Heading"""  | """<h2>Heading</h2>""" | Level 2 heading. |
+| """### Heading""" | """<h3>Heading</h3>""" | Level 3 heading. |
+
+ScenarioGroup Emphasis
+
+Scenario Render Emphasis
+Description Asterisks create emphasis and strong emphasis.
+Examples: MarkdownRendering
+| Markdown         | Html                                        | Notes            |
+| """*text*"""     | """<p><em>text</em></p>"""                  | Emphasis.        |
+| """**text**"""   | """<p><strong>text</strong></p>"""          | Strong emphasis. |
+| """***text***""" | """<p><em><strong>text</strong></em></p>""" | Nested emphasis. |
+
+ScenarioGroup Links
+
+Scenario Render Links
+Description Markdown links are rendered as anchor elements.
+Examples: MarkdownRendering
+| Markdown                           | Html                                                 | Notes         |
+| """[Home](/)"""                    | """<p><a href="/">Home</a></p>"""                    | Relative URL. |
+| """[Google](https://google.com)""" | """<p><a href="https://google.com">Google</a></p>""" | Absolute URL. |
+
+ScenarioGroup Lists
+
+Scenario Render Unordered Lists
+Description Dash-prefixed items become unordered lists.
+Examples: MarkdownRendering
+| Markdown | Html | Notes |
+| """      |      |       |
+- A
+""" | """<ul><li>A</li></ul>""" | Single-item list. |
+| """ |
+- A
+- B
+""" | """<ul><li>A</li><li>B</li></ul>""" | Two-item list. |
+
+Scenario Render Ordered Lists
+Description Number-prefixed items become ordered lists.
+Examples: MarkdownRendering
+| Markdown | Html | Notes |
+| """      |      |       |
+1. A
+""" | """<ol><li>A</li></ol>""" | Single-item list. |
+| """ |
+1. A
+2. B
+""" | """<ol><li>A</li><li>B</li></ol>""" | Two-item list. |
+
+ScenarioGroup Code
+
+Scenario Render Inline Code
+Description Backticks create inline code.
+Examples: MarkdownRendering
+| Markdown     | Html                           | Notes        |
+| """`code`""" | """<p><code>code</code></p>""" | Inline code. |
+
+Scenario Render Fenced Code Block
+Description Triple backticks create a code block.
+Examples: MarkdownRendering
+| Markdown | Html | Notes |
+| """      |      |       |

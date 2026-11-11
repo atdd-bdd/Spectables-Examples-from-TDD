@@ -1,0 +1,15 @@
+{
+    "name": "Spectables Examples from TDD",
+    "projects": [
+        {
+            "name": "Examples from TDD",
+            "relativePath": "Examples from TDD"
+        },
+        {
+            "name": "Examples from Open Source",
+            "relativePath": "Examples from Open Source"
+        }
+    ],
+    "sharingMode": "sharedFiles",
+    "version": 2
+}

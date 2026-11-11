@@ -1,0 +1,71 @@
+Specification Prime Factors
+
+DataType PrimeFactorization
+Description A sequence of prime numbers whose product equals the original number.
+Examples: ValidValues
+| Value       | IsValid | Notes                                         |
+| 2           | True    |                                               |
+| 2,2         | True    |                                               |
+| 2,2,3       | True    |                                               |
+| 2,2,2,3,3,5 | True    |                                               |
+| 1           | False   | 1 is not a prime number.                      |
+| 4           | False   | 4 is not prime and must be factored into 2,2. |
+| 2,4         | False   | Every factor must be prime.                   |
+| 2,3,5       | False   | Not every list of primes is a valid result.   |
+|             | False   | Factorization must not be empty.              |
+
+Attributes FactorizationCases
+| Name   | DataType           |
+| Number | Integer            |
+| Result | PrimeFactorization |
+
+Calculation One Has No Prime Factors
+Description One produces an empty factorization.
+Examples: FactorizationCases
+| Number | Result |
+| 1      |        |
+
+Calculation Prime Numbers Factor To Themselves
+Description A prime number factors to itself.
+Examples: FactorizationCases
+| Number | Result |
+| 2      | 2      |
+| 3      | 3      |
+| 5      | 5      |
+| 7      | 7      |
+| 13     | 13     |
+
+Calculation Powers Of A Prime
+Description Repeated prime factors are included once for each occurrence.
+Examples: FactorizationCases
+| Number | Result |
+| 4      | 2,2    |
+| 8      | 2,2,2  |
+| 9      | 3,3    |
+| 27     | 3,3,3  |
+
+Calculation Composite Numbers
+Description Composite numbers are represented by their prime factors.
+Examples: FactorizationCases
+| Number | Result |
+| 6      | 2,3    |
+| 10     | 2,5    |
+| 12     | 2,2,3  |
+| 15     | 3,5    |
+| 21     | 3,7    |
+
+Calculation Complex Factorizations
+Description Prime factors are returned in ascending order.
+Examples: FactorizationCases
+| Number | Result              |
+| 60     | 2,2,3,5             |
+| 180    | 2,2,3,3,5           |
+| 360    | 2,2,2,3,3,5         |
+| 1024   | 2,2,2,2,2,2,2,2,2,2 |
+
+Calculation Large Prime Number
+Description Large prime numbers factor to themselves.
+Examples: FactorizationCases
+| Number | Result |
+| 97     | 97     |
+| 997    | 997    |

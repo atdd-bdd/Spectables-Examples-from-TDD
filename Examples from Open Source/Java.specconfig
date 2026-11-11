@@ -1,0 +1,12 @@
+{
+    "createProductionClasses": true,
+    "failEveryTest": true,
+    "framework": "JUnit",
+    "language": "Java",
+    "namespace": "spectable",
+    "outputDirectory": "src/test/java/spectable",
+    "overwriteGlue": false,
+    "productionClassesDir": "src/main/java/production",
+    "productionClassesPackage": "production",
+    "version": 1
+}

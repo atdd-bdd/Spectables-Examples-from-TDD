@@ -1,0 +1,44 @@
+Specification Tennis Scoring
+
+DataType TennisScore
+Description Textual tennis scores
+Examples: ValidValues
+| Value              | IsValid | Notes                               |
+| Love-All           | True    |                                     |
+| Fifteen-Love       | True    |                                     |
+| Thirty-Fifteen     | True    |                                     |
+| Forty-Thirty       | True    |                                     |
+| Deuce              | True    |                                     |
+| Advantage Player 1 | True    |                                     |
+| Advantage Player 2 | True    |                                     |
+| Win For Player 1   | True    |                                     |
+| Win For Player 2   | True    |                                     |
+| Fifty-Love         | False   | Fifty is not a tennis score.        |
+| Advantage          | False   | Advantage must identify the player. |
+| Winner Player 1    | False   | Win For is the correct format.      |
+|                    | False   | Tennis score must not be empty.     |
+
+Attributes ScoringCases
+| Name          | DataType    |
+| Player1Points | Integer     |
+| Player2Points | Integer     |
+| Result        | TennisScore |
+
+Calculation Equal Scores Below Forty
+Description Equal scores below three points are expressed using the score name followed by All.
+Examples: ScoringCases
+| Player1Points | Player2Points | Result      |
+| 0             | 0             | Love-All    |
+| 1             | 1             | Fifteen-All |
+| 2             | 2             | Thirty-All  |
+
+Calculation Ordinary Scores
+Description Scores below deuce are expressed using the score names for each player.
+Examples: ScoringCases
+| Player1Points | Player2Points | Result         |
+| 1             | 0             | Fifteen-Love   |
+| 2             | 0             | Thirty-Love    |
+| 3             | 0             | Forty-Love     |
+| 2             | 1             | Thirty-Fifteen |
+| 3             | 1             | Forty-Fifteen  |
+| 3             |               |                |

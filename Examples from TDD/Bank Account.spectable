@@ -1,0 +1,46 @@
+Specification Bank Account
+
+DataType Dollar
+Description A monetary amount expressed in dollars and cents.
+Examples: ValidValues
+| Value   | IsValid | Notes                            |
+| $0.00   | True    |                                  |
+| $1.00   | True    |                                  |
+| $100.50 | True    |                                  |
+| $-25.75 | True    | Negative amounts are allowed.    |
+| 100.00  | False   | Dollar values must begin with $. |
+| $12.345 | False   | More than two decimal places.    |
+| $ABC    | False   | Not a numeric amount.            |
+| $       | False   | Amount is missing.               |
+
+DataType ListOfDollar
+Description A comma-separated list of dollar amounts.
+Examples: ValidValues
+| Value                  | IsValid | Notes                        |
+|                        | True    | Empty list.                  |
+| $100.00                | True    | Single value.                |
+| $100.00,$50.00         | True    | Multiple values.             |
+| $-25.00                | True    | Negative values are allowed. |
+| $100.00,$-25.00,$50.00 | True    | Mixed                        |
+
+Attributes TransactionCases
+| Name         | DataType     |
+| Transactions | ListOfDollar |
+| Result       | Decimal      |
+| Notes        | String       |
+
+Calculation Calculate Account Balance
+Description The account balance is the sum of all deposits and withdrawals.
+Examples: TransactionCases
+| Transactions  | Result | Notes                                   |
+|               | 0.00   | No transactions produce a zero balance. |
+| 100           | 100.00 | Single deposit.                         |
+| -25           | -25.00 | Single withdrawal.                      |
+| 100,-25       | 75.00  | Deposit followed by withdrawal.         |
+| 100,50        | 150.00 | Multiple deposits are summed.           |
+| -50,-25       | -75.00 | Multiple withdrawals are summed.        |
+| 100,-25,50    | 125.00 | Running balance after mixed activity.   |
+| 500,-200,-100 | 200.00 | Deposits and withdrawals net together.  |
+| 1000,-250,75  | 825.00 | Balance reflects all transactions.      |
+| 50,-50        | 0.00   | Equal deposit and withdrawal cancel.    |
+| 1,2,3,4       | 10.00  | All transactions contribute equally.    |

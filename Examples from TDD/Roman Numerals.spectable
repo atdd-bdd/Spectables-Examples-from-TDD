@@ -1,0 +1,17 @@
+Specification Roman Numerals
+
+DataType RomanNumeral
+Description Roman Numeral formats b
+Examples: ValidValues
+| Value  | IsValid | Notes                                       |
+| I      | True    |                                             |
+| IV     | True    |                                             |
+| IX     | True    |                                             |
+| XL     | True    |                                             |
+| XCIX   | True    |                                             |
+| MMXXIV | True    |                                             |
+| IIII   | False   | I cannot be repeated more than three times. |
+| VV     | False   | V cannot be repeated.                       |
+| IC     | False   | I may only precede V or X.                  |
+| XM     | False   | X may only precede L or C.                  |
+|        |         |                                             |

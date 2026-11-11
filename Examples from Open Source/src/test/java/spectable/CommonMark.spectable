@@ -1,0 +1,152 @@
+Specification CommonMark
+
+DataType Markdown
+Description Markdown source text.
+Examples: ValidValues
+| Value     | IsValid | Notes |
+| Hello     | True    |       |
+| # Heading | True    |       |
+| **Bold**  | True    |       |
+
+DataType Html
+Description HTML produced from Markdown.
+Examples: ValidValues
+| Value            | IsValid | Notes |
+| <p>Hello</p>     | True    |       |
+| <h1>Heading</h1> | True    |       |
+
+Attributes RenderingCases
+| Name     | DataType |
+| Markdown | Markdown |
+| Result   | Html     |
+| Notes    | String   |
+
+ScenarioGroup Paragraphs
+
+Calculation Render Paragraph
+Description Plain text is rendered as a paragraph.
+Examples: RenderingCases
+| Markdown    | Result             | Notes                  |
+| Hello world | <p>Hello world</p> | Single line paragraph. |
+| CommonMark  | <p>CommonMark</p>  | Simple text.           |
+
+Calculation Preserve Spaces Within Paragraph
+Description Spaces inside paragraph text are preserved.
+Examples: RenderingCases
+| Markdown    | Result             | Notes                  |
+| Hello world | <p>Hello world</p> | Single space retained. |
+
+ScenarioGroup Headings
+
+Calculation ATX Headings
+Description Hash characters create ATX headings.
+Examples: RenderingCases
+| Markdown    | Result           | Notes            |
+| # Heading   | <h1>Heading</h1> | Level 1 heading. |
+| ## Heading  | <h2>Heading</h2> | Level 2 heading. |
+| ### Heading | <h3>Heading</h3> | Level 3 heading. |
+
+Calculation Heading Text Is Parsed
+Description Heading contents may contain inline formatting.
+Examples: RenderingCases
+| Markdown    | Result                    | Notes                |
+| # *Heading* | <h1><em>Heading</em></h1> | Emphasis in heading. |
+
+ScenarioGroup Emphasis
+
+Calculation Italic Emphasis
+Description Single asterisks produce emphasis.
+Examples: RenderingCases
+| Markdown | Result               | Notes           |
+| *text*   | <p><em>text</em></p> | Basic emphasis. |
+
+Calculation Strong Emphasis
+Description Double asterisks produce strong emphasis.
+Examples: RenderingCases
+| Markdown | Result                       | Notes            |
+| **text** | <p><strong>text</strong></p> | Strong emphasis. |
+
+Calculation Nested Emphasis
+Description Emphasis may be nested.
+Examples: RenderingCases
+| Markdown   | Result                                | Notes          |
+| ***text*** | <p><em><strong>text</strong></em></p> | Nested markup. |
+
+ScenarioGroup Links
+
+Calculation Inline Link
+Description A Markdown link renders as an HTML anchor.
+Examples: RenderingCases
+| Markdown                    | Result                                        | Notes       |
+| [CommonMark](https://a.com) | <p><a href="https://a.com">CommonMark</a></p> | Basic link. |
+
+Calculation Link Inside Text
+Description Links can appear within paragraph text.
+Examples: RenderingCases
+| Markdown                          | Result                                              | Notes          |
+| Visit [site](https://a.com) today | <p>Visit <a href="https://a.com">site</a> today</p> | Embedded link. |
+
+ScenarioGroup Lists
+
+Calculation Unordered List
+Description Dash-prefixed items create an unordered list.
+Examples: RenderingCases
+| Markdown | Result                        | Notes          |
+| - A\n- B | <ul><li>A</li><li>B</li></ul> | Two-item list. |
+
+Calculation Ordered List
+Description Number-prefixed items create an ordered list.
+Examples: RenderingCases
+| Markdown   | Result                        | Notes         |
+| 1. A\n2. B | <ol><li>A</li><li>B</li></ol> | Ordered list. |
+
+ScenarioGroup Code
+
+Calculation Inline Code
+Description Backticks create inline code.
+Examples: RenderingCases
+| Markdown | Result                   | Notes        |
+| `code`   | <p><code>code</code></p> | Inline code. |
+
+Calculation Fenced Code Block
+Description Triple backticks create a code block.
+Examples: RenderingCases
+| Markdown      | Result                        | Notes              |
+| ```\nabc\n``` | <pre><code>abc\n</code></pre> | Fenced code block. |
+
+ScenarioGroup BlockQuotes
+
+Calculation Block Quote
+Description Greater-than signs create block quotes.
+Examples: RenderingCases
+| Markdown | Result                                 | Notes         |
+| > quoted | <blockquote><p>quoted</p></blockquote> | Simple quote. |
+
+ScenarioGroup Escaping
+
+Calculation Escaped Formatting Characters
+Description Escaped characters are rendered literally.
+Examples: RenderingCases
+| Markdown | Result | Notes | Asterisk not interpreted. |
+
+ScenarioGroup Horizontal Rules
+
+Calculation Horizontal Rule
+Description Three consecutive dashes create a thematic break.
+Examples: RenderingCases
+| Markdown | Result | Notes            |
+| ---      | <hr /> | Horizontal rule. |
+
+ScenarioGroup Mixed Examples
+
+Calculation Paragraph With Link And Emphasis
+Description Multiple inline constructs may be combined.
+Examples: RenderingCases
+| Markdown                  | Result                                          | Notes              |
+| Visit *our* https://a.com | <p>Visit <em>our</em> https://a.comsite</a></p> | Combined features. |
+
+Calculation List With Emphasis
+Description Inline formatting may appear inside list items.
+Examples: RenderingCases
+| Markdown           | Result                                                      | Notes            |
+| - *one*\n- **two** | <ul><li><em>one</em></li><li><strong>two</strong></li></ul> | Rich list items. |

@@ -1,0 +1,91 @@
+Specification String Calculator
+
+# In the configuration, set tags to NOT $TBD 
+# Then untag each calculation one by one and make each pass 
+
+Attributes CalculationCases
+| Name   | DataType |
+| Input  | String   |
+| Result | String   |
+
+$TBD
+Calculation Empty String Returns Zero
+Description Returns zero when no numbers are supplied.
+Examples: CalculationCases
+| Input | Result |
+|       | 0      |
+
+$TBD
+Calculation Single Number Returns Value
+Description Returns the number when a single number is supplied.
+Examples: CalculationCases
+| Input | Result |
+| 1     | 1      |
+| 42    | 42     |
+
+$TBD
+Calculation Multiple Numbers Are Summed
+Description Returns the sum of all comma-separated numbers.
+Examples: CalculationCases
+| Input    | Result |
+| 1,2      | 3      |
+| 1,2,3    | 6      |
+| 10,20,30 | 60     |
+
+$TBD
+Calculation Newlines Are Valid Separators
+Description Treats newlines the same as commas when separating numbers.
+Examples: CalculationCases
+| Input  | Result |
+| 1\n2   | 3      |
+| 1\n2,3 | 6      |
+
+$TBD
+Calculation Custom Delimiter Is Supported
+Description Uses the delimiter specified at the start of the input.
+Examples: CalculationCases
+| Input    | Result |
+| //;\n1;2 | 3      |
+| //       | 0      |
+
+$TBD
+Calculation Negative Numbers Cause Error
+Description Reports the negative numbers that were supplied.
+Examples: CalculationCases
+| Input | Result |
+| -1    | Error  |
+| 1,-2  | Error  |
+| -1,-2 | Error  |
+
+$TBD
+Calculation Numbers Greater Than One Thousand Are Ignored
+Description Excludes numbers greater than one thousand from the sum.
+Examples: CalculationCases
+| Input  | Result |
+| 2,1001 | 2      |
+| 1000,2 | 1002   |
+| 1001,2 | 2      |
+
+$TBD
+Calculation Delimiters Of Any Length Are Supported
+Description Allows a custom delimiter containing multiple characters.
+Examples: CalculationCases
+| Input          | Result |
+| //[***]\n1***2 | 3      |
+| //[--]\n2--3   | 5      |
+
+$TBD
+Calculation Multiple Delimiters Are Supported
+Description Allows more than one custom delimiter.
+Examples: CalculationCases
+| Input           | Result |
+| //[*][%]\n1*2%3 | 6      |
+| //[#][@]\n2#3@4 | 9      |
+
+$TBD
+Calculation Multiple Long Delimiters Are Supported
+Description Allows multiple delimiters of arbitrary length.
+Examples: CalculationCases
+| Input                   | Result |
+| //[***][%%]\n1***2%%3   | 6      |
+| //[abc][xyz]\n4abc5xyz6 | 15     |

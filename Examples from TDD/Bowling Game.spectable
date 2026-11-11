@@ -1,0 +1,78 @@
+Specification Bowling Game
+
+DataType BowlingScore
+Description The total score for a completed bowling game.
+Examples: ValidValues
+| Value | IsValid | Notes                     |
+| 0     | True    |                           |
+| 57    | True    |                           |
+| 133   | True    |                           |
+| 300   | True    |                           |
+| -1    | False   | Score cannot be negative. |
+| 301   | False   | Maximum score is 300.     |
+
+Attributes ScoreCases
+| Name   | DataType     |
+| Rolls  | String       |
+| Result | BowlingScore |
+
+Calculation Gutter Game
+Description A game of all gutter balls scores zero.
+Examples: ScoreCases
+| Rolls                                   | Result |
+| 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 | 0      |
+
+Calculation All Ones
+Description The score is the sum of all pins knocked down when there are no spares or strikes.
+Examples: ScoreCases
+| Rolls               | Result |
+| 1,1,1,1,1,1,1,1,1,1 |        |
+
+Calculation Single Spare
+Description A spare earns a bonus equal to the next roll.
+Examples: ScoreCases
+| Rolls                                   | Result |
+| 5,5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 | 16     |
+
+Calculation Multiple Spares
+Description Each spare earns a bonus from the roll immediately following it.
+Examples: ScoreCases
+| Rolls                                   | Result |
+| 5,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0 | 30     |
+
+Calculation Single Strike
+Description A strike earns a bonus equal to the next two rolls.
+Examples: ScoreCases
+| Rolls                                  | Result |
+| 10,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 | 24     |
+
+Calculation Consecutive Strikes
+Description Strike bonuses accumulate from subsequent rolls.
+Examples: ScoreCases
+| Rolls                               | Result |
+| 10,10,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0 | 47     |
+
+Calculation Perfect Game
+Description Twelve consecutive strikes produce the maximum score.
+Examples: ScoreCases
+| Rolls                               | Result |
+| 10,10,10,10,10,10,10,10,10,10,10,10 | 300    |
+
+Calculation Final Frame Spare
+Description A spare in the tenth frame earns one bonus roll.
+Examples: ScoreCases
+| Rolls                                     | Result |
+| 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,7 | 17     |
+
+Calculation Final Frame Strike
+Description A strike in the tenth frame earns two bonus rolls.
+Examples: ScoreCases
+| Rolls                                      | Result |
+| 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,7,2 | 19     |
+
+Calculation Typical Game
+Description Calculates a realistic game containing open frames, spares, and strikes.
+Examples: ScoreCases
+| Rolls                                   | Result |
+| 1,4,4,5,6,4,5,5,10,0,1,7,3,6,4,10,2,8,6 | 133    |
+

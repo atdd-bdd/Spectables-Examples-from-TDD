@@ -1,0 +1,55 @@
+Specification Mars Rover
+
+DataType Heading
+Description A compass direction indicating which way the rover is facing.
+Examples: ValidValues
+| Value | IsValid | Notes                             |
+| N     | True    |                                   |
+| E     | True    |                                   |
+| S     | True    |                                   |
+| W     | True    |                                   |
+| NE    | False   | Only cardinal directions allowed. |
+| X     | False   | Unknown heading.                  |
+|       | False   | Heading is required.              |
+
+DataType Commands
+Description A sequence of rover commands.
+Examples: ValidValues
+| Value | IsValid | Notes                        |
+| L     | True    | Turn left.                   |
+| R     | True    | Turn right.                  |
+| M     | True    | Move forward.                |
+| LRM   | True    | Sequence of valid commands.  |
+| MX    | False   | X is not a valid command.    |
+| 123   | False   | Commands must be alphabetic. |
+
+DataType Position
+Description A rover location and heading.
+Examples: ValidValues
+| Value | IsValid | Notes                        |
+| 0,0,N | True    |                              |
+| 1,2,E | True    |                              |
+| 9,9,S | True    |                              |
+| 0,0   | False   | Heading is missing.          |
+| N,0,0 | False   | Coordinates must be first.   |
+| A,B,N | False   | Coordinates must be numeric. |
+
+Attributes NavigationCases
+| Name          | DataType |
+| StartPosition | Position |
+| Commands      | Commands |
+| Result        | Position |
+| Notes         | String   |
+
+Calculation Navigate Rover
+Description The rover follows commands from its starting position and reports its final position.
+Examples: NavigationCases
+| StartPosition | Commands | Result | Notes                  |
+| 0,0,N         |          | 0,0,N  | No commands.           |
+| 0,0,N         | M        | 0,1,N  | Move north.            |
+| 0,0,E         | M        | 1,0,E  | Move east.             |
+| 0,0,S         | M        | 0,-1,S | Move south.            |
+| 0,0,W         | M        | -1,0,W | Move west.             |
+| 0,0,N         | L        | 0,0,W  | Turn left from north.  |
+| 0,0,N         | R        | 0,0,E  | Turn right from north. |
+| 0,0,N         | RM       | 1,0,E  | Turn then move.        |

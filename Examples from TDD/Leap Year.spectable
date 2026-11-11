@@ -1,0 +1,25 @@
+Specification Leap Year
+
+Attributes LeapYearCases
+| Name   | DataType |
+| Year   | Integer  |
+| Result | YesNo    |
+| Notes  | String   |
+
+Calculation Determine Whether A Year Is A Leap Year
+Description A leap year is divisible by 4, except century years which must be divisible by 400.
+Examples: LeapYearCases
+| Year | Result | Notes                                  |
+| 2001 | No     | Not divisible by 4.                    |
+| 2002 | No     | Not divisible by 4.                    |
+| 2003 | No     | Not divisible by 4.                    |
+| 1996 | Yes    | Divisible by 4 and not a century year. |
+| 2004 | Yes    | Divisible by 4 and not a century year. |
+| 2024 | Yes    | Divisible by 4 and not a century year. |
+| 1700 | No     | Divisible by 100 but not by 400.       |
+| 1800 | No     | Divisible by 100 but not by 400.       |
+| 1900 | No     | Divisible by 100 but not by 400.       |
+| 2000 | Yes    | Divisible by 400.                      |
+| 2400 | Yes    | Divisible by 400.                      |
+| 1999 | No     | Not divisible by 4.                    |
+| 2100 | No     | Divisible by 100 but not by 400.       |

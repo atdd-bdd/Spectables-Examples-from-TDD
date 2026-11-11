@@ -1,0 +1,40 @@
+Specification Gilded Rose
+
+DataType ItemName
+Description The name of an inventory item.
+Examples: ValidValues
+| Value              | IsValid | Notes                   |
+| Dexterity Vest     | True    |                         |
+| Aged Brie          | True    |                         |
+| Sulfuras           | True    |                         |
+| Backstage Pass     | True    |                         |
+| Conjured Mana Cake | True    |                         |
+|                    | False   | Name must not be empty. |
+
+Attributes InventoryCases
+| Name       | DataType |
+| ItemName   | ItemName |
+| SellIn     | Integer  |
+| Quality    | Integer  |
+| NewSellIn  | Integer  |
+| NewQuality | Integer  |
+| Notes      | String   |
+
+Calculation Update Inventory For One Day
+Description Updates the SellIn and Quality values according to the item's rules.
+Examples: InventoryCases
+| ItemName           | SellIn | Quality | NewSellIn | NewQuality | Notes                                                      |
+| Dexterity Vest     | 10     | 20      | 9         | 19         | Ordinary items lose one quality per day.                   |
+| Dexterity Vest     | 0      | 20      | -1        | 18         | Ordinary items degrade twice as fast after sell date.      |
+| Dexterity Vest     | 5      | 0       | 4         | 0          | Quality never becomes negative.                            |
+| Aged Brie          | 10     | 20      | 9         | 21         | Aged Brie increases in quality.                            |
+| Aged Brie          | 0      | 20      | -1        | 22         | Aged Brie improves twice as fast after sell date.          |
+| Aged Brie          | 5      | 50      | 4         | 50         | Quality never exceeds fifty.                               |
+| Sulfuras           | 0      | 80      | 0         | 80         | Legendary items never change.                              |
+| Sulfuras           | -1     | 80      | -1        | 80         | Legendary items ignore sell dates.                         |
+| Backstage Pass     | 15     | 20      | 14        | 21         | More than ten days remaining.                              |
+| Backstage Pass     | 10     | 20      | 9         | 22         | Ten or fewer days remaining.                               |
+| Backstage Pass     | 5      | 20      | 4         | 23         | Five or fewer days remaining.                              |
+| Backstage Pass     | 0      | 20      | -1        | 0          | Quality drops to zero after concert.                       |
+| Conjured Mana Cake | 10     | 20      | 9         | 18         | Conjured items degrade twice as fast.                      |
+| Conjured Mana Cake | 0      | 20      | -1        | 16         | Conjured items degrade four times as fast after sell date. |

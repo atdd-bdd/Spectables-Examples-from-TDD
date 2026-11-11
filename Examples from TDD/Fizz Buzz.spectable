@@ -1,0 +1,76 @@
+Specification FizzBuzz
+
+DataType Output
+Description Possible outputs of the program
+Examples: OutputExamples
+| Output   |
+| 1        |
+| Fizz     |
+| Buzz     |
+| FizzBuzz |
+
+Attributes OutputExamples
+| Attribute | DataType |
+| Output    | String   |
+
+Attributes FizzBuzzCases
+| Name   | DataType |
+| Number | Integer  |
+| Result | Output   |
+
+Calculation Non-Multiples Return Number
+Description Returns the number when it is not divisible by three or five.
+Examples: FizzBuzzCases
+| Number | Result |
+| 1      | 1      |
+| 2      | 2      |
+| 4      | 4      |
+| 7      | 7      |
+| 8      | 8      |
+
+Calculation Multiples Of Three Return Fizz
+Description Returns Fizz when the number is divisible by three and not by five.
+Examples: FizzBuzzCases
+| Number | Result |
+| 3      | Fizz   |
+| 6      | Fizz   |
+| 9      | Fizz   |
+| 12     | Fizz   |
+
+Calculation Multiples Of Five Return Buzz
+Description Returns Buzz when the number is divisible by five and not by three.
+Examples: FizzBuzzCases
+| Number | Result |
+| 5      | Buzz   |
+| 10     | Buzz   |
+| 20     | Buzz   |
+| 25     | Buzz   |
+
+Calculation Multiples Of Three And Five Return FizzBuzz
+Description Returns FizzBuzz when the number is divisible by both three and five.
+Examples: FizzBuzzCases
+| Number | Result   |
+| 15     | FizzBuzz |
+| 30     | FizzBuzz |
+| 45     | FizzBuzz |
+| 60     | FizzBuzz |
+
+Calculation Values One Through Fifteen
+Description Demonstrates the complete FizzBuzz sequence from one through fifteen.
+Examples: FizzBuzzCases
+| Number | Result   |
+| 1      | 1        |
+| 2      | 2        |
+| 3      | Fizz     |
+| 4      | 4        |
+| 5      | Buzz     |
+| 6      | Fizz     |
+| 7      | 7        |
+| 8      | 8        |
+| 9      | Fizz     |
+| 10     | Buzz     |
+| 11     | 11       |
+| 12     | Fizz     |
+| 13     | 13       |
+| 14     | 14       |
+| 15     | FizzBuzz |
