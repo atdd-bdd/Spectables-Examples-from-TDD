@@ -57,18 +57,40 @@ public class FizzBuzz_Test {
         glue.Examples_Calculation_Multiples_Of_Three_And_Five_Return_FizzBuzz(objectList4);
     }
 
+    @Test
+    public void Calculation_Values_One_Through_Fifteen() {
+        FizzBuzz_glue glue = new FizzBuzz_glue();
+        List<FizzBuzzCasesString> objectList5 = new ArrayList<>();
+        objectList5.add(new FizzBuzzCasesString("1", "1"));
+        objectList5.add(new FizzBuzzCasesString("2", "2"));
+        objectList5.add(new FizzBuzzCasesString("3", "Fizz"));
+        objectList5.add(new FizzBuzzCasesString("4", "4"));
+        objectList5.add(new FizzBuzzCasesString("5", "Buzz"));
+        objectList5.add(new FizzBuzzCasesString("6", "Fizz"));
+        objectList5.add(new FizzBuzzCasesString("7", "7"));
+        objectList5.add(new FizzBuzzCasesString("8", "8"));
+        objectList5.add(new FizzBuzzCasesString("9", "Fizz"));
+        objectList5.add(new FizzBuzzCasesString("10", "Buzz"));
+        objectList5.add(new FizzBuzzCasesString("11", "11"));
+        objectList5.add(new FizzBuzzCasesString("12", "Fizz"));
+        objectList5.add(new FizzBuzzCasesString("13", "13"));
+        objectList5.add(new FizzBuzzCasesString("14", "14"));
+        objectList5.add(new FizzBuzzCasesString("15", "FizzBuzz"));
+        glue.Examples_Calculation_Values_One_Through_Fifteen(objectList5);
+    }
+
     // -------------------------
     // DataType Tests
     // -------------------------
     @Test
     public void DataType_Output() {
         FizzBuzz_glue glue = new FizzBuzz_glue();
-        List<OutputExamplesString> objectList5 = new ArrayList<>();
-        objectList5.add(new OutputExamplesString("1"));
-        objectList5.add(new OutputExamplesString("Fizz"));
-        objectList5.add(new OutputExamplesString("Buzz"));
-        objectList5.add(new OutputExamplesString("FizzBuzz"));
-        glue.Examples_DataType_Output(objectList5);
+        List<OutputExamplesString> objectList6 = new ArrayList<>();
+        objectList6.add(new OutputExamplesString("1"));
+        objectList6.add(new OutputExamplesString("Fizz"));
+        objectList6.add(new OutputExamplesString("Buzz"));
+        objectList6.add(new OutputExamplesString("FizzBuzz"));
+        glue.Examples_DataType_Output(objectList6);
     }
 
 }

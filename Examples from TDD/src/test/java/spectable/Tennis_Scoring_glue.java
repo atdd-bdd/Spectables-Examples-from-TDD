@@ -33,4 +33,13 @@ public class Tennis_Scoring_glue {
         fail("Not implemented: Examples_Calculation_Equal_Scores_Below_Forty");
     }
 
+
+    public void Examples_Calculation_Ordinary_Scores(List<ScoringCasesString> values) {
+        for (ScoringCasesString value : values) {
+            ScoringCasesTyped typed = new ScoringCasesTyped(value);
+            System.out.println(typed);
+        }
+        fail("Not implemented: Examples_Calculation_Ordinary_Scores");
+    }
+
 }

@@ -95,4 +95,13 @@ public class String_Calculator_Test {
         glue.Examples_Calculation_Multiple_Delimiters_Are_Supported(objectList9);
     }
 
+    @Test
+    public void Calculation_Multiple_Long_Delimiters_Are_Supported() {
+        String_Calculator_glue glue = new String_Calculator_glue();
+        List<CalculationCasesString> objectList10 = new ArrayList<>();
+        objectList10.add(new CalculationCasesString("//[***][%%]\\n1***2%%3", "6"));
+        objectList10.add(new CalculationCasesString("//[abc][xyz]\\n4abc5xyz6", "15"));
+        glue.Examples_Calculation_Multiple_Long_Delimiters_Are_Supported(objectList10);
+    }
+
 }

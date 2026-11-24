@@ -55,4 +55,13 @@ public class Mars_Rover_glue {
         }
     }
 
+
+    public void Examples_Calculation_Navigate_Rover(List<NavigationCasesString> values) {
+        for (NavigationCasesString value : values) {
+            NavigationCasesTyped typed = new NavigationCasesTyped(value);
+            System.out.println(typed);
+        }
+        fail("Not implemented: Examples_Calculation_Navigate_Rover");
+    }
+
 }

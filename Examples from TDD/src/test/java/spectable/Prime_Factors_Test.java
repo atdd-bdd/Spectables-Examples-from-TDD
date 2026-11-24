@@ -66,23 +66,32 @@ public class Prime_Factors_Test {
         glue.Examples_Calculation_Complex_Factorizations(objectList5);
     }
 
+    @Test
+    public void Calculation_Large_Prime_Number() {
+        Prime_Factors_glue glue = new Prime_Factors_glue();
+        List<FactorizationCasesString> objectList6 = new ArrayList<>();
+        objectList6.add(new FactorizationCasesString("97", "97"));
+        objectList6.add(new FactorizationCasesString("997", "997"));
+        glue.Examples_Calculation_Large_Prime_Number(objectList6);
+    }
+
     // -------------------------
     // DataType Tests
     // -------------------------
     @Test
     public void DataType_PrimeFactorization() {
         Prime_Factors_glue glue = new Prime_Factors_glue();
-        List<ValidValuesString> objectList6 = new ArrayList<>();
-        objectList6.add(new ValidValuesString("2", "True", ""));
-        objectList6.add(new ValidValuesString("2,2", "True", ""));
-        objectList6.add(new ValidValuesString("2,2,3", "True", ""));
-        objectList6.add(new ValidValuesString("2,2,2,3,3,5", "True", ""));
-        objectList6.add(new ValidValuesString("1", "False", "1 is not a prime number."));
-        objectList6.add(new ValidValuesString("4", "False", "4 is not prime and must be factored into 2,2."));
-        objectList6.add(new ValidValuesString("2,4", "False", "Every factor must be prime."));
-        objectList6.add(new ValidValuesString("2,3,5", "False", "Not every list of primes is a valid result."));
-        objectList6.add(new ValidValuesString("", "False", "Factorization must not be empty."));
-        glue.Examples_DataType_PrimeFactorization(objectList6);
+        List<ValidValuesString> objectList7 = new ArrayList<>();
+        objectList7.add(new ValidValuesString("2", "True", ""));
+        objectList7.add(new ValidValuesString("2,2", "True", ""));
+        objectList7.add(new ValidValuesString("2,2,3", "True", ""));
+        objectList7.add(new ValidValuesString("2,2,2,3,3,5", "True", ""));
+        objectList7.add(new ValidValuesString("1", "False", "1 is not a prime number."));
+        objectList7.add(new ValidValuesString("4", "False", "4 is not prime and must be factored into 2,2."));
+        objectList7.add(new ValidValuesString("2,4", "False", "Every factor must be prime."));
+        objectList7.add(new ValidValuesString("2,3,5", "False", "Not every list of primes is a valid result."));
+        objectList7.add(new ValidValuesString("", "False", "Factorization must not be empty."));
+        glue.Examples_DataType_PrimeFactorization(objectList7);
     }
 
 }

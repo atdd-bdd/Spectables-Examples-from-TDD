@@ -40,4 +40,13 @@ public class Bank_Account_glue {
         }
     }
 
+
+    public void Examples_Calculation_Calculate_Account_Balance(List<TransactionCasesString> values) {
+        for (TransactionCasesString value : values) {
+            TransactionCasesTyped typed = new TransactionCasesTyped(value);
+            System.out.println(typed);
+        }
+        fail("Not implemented: Examples_Calculation_Calculate_Account_Balance");
+    }
+
 }

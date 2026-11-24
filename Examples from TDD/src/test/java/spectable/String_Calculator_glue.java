@@ -81,4 +81,13 @@ public class String_Calculator_glue {
         fail("Not implemented: Examples_Calculation_Multiple_Delimiters_Are_Supported");
     }
 
+
+    public void Examples_Calculation_Multiple_Long_Delimiters_Are_Supported(List<CalculationCasesString> values) {
+        for (CalculationCasesString value : values) {
+            CalculationCasesTyped typed = new CalculationCasesTyped(value);
+            System.out.println(typed);
+        }
+        fail("Not implemented: Examples_Calculation_Multiple_Long_Delimiters_Are_Supported");
+    }
+
 }

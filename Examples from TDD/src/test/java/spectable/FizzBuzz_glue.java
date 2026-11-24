@@ -49,4 +49,13 @@ public class FizzBuzz_glue {
         fail("Not implemented: Examples_Calculation_Multiples_Of_Three_And_Five_Return_FizzBuzz");
     }
 
+
+    public void Examples_Calculation_Values_One_Through_Fifteen(List<FizzBuzzCasesString> values) {
+        for (FizzBuzzCasesString value : values) {
+            FizzBuzzCasesTyped typed = new FizzBuzzCasesTyped(value);
+            System.out.println(typed);
+        }
+        fail("Not implemented: Examples_Calculation_Values_One_Through_Fifteen");
+    }
+
 }

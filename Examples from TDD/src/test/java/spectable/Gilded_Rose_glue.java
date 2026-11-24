@@ -25,4 +25,13 @@ public class Gilded_Rose_glue {
         }
     }
 
+
+    public void Examples_Calculation_Update_Inventory_For_One_Day(List<InventoryCasesString> values) {
+        for (InventoryCasesString value : values) {
+            InventoryCasesTyped typed = new InventoryCasesTyped(value);
+            System.out.println(typed);
+        }
+        fail("Not implemented: Examples_Calculation_Update_Inventory_For_One_Day");
+    }
+
 }

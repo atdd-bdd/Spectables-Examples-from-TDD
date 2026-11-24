@@ -65,4 +65,13 @@ public class Prime_Factors_glue {
         fail("Not implemented: Examples_Calculation_Complex_Factorizations");
     }
 
+
+    public void Examples_Calculation_Large_Prime_Number(List<FactorizationCasesString> values) {
+        for (FactorizationCasesString value : values) {
+            FactorizationCasesTyped typed = new FactorizationCasesTyped(value);
+            System.out.println(typed);
+        }
+        fail("Not implemented: Examples_Calculation_Large_Prime_Number");
+    }
+
 }
